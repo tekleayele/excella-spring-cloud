@@ -1,0 +1,4 @@
+include "excella-config-server"
+include "excella-service-provider"
+include "excella-service-consumer"
+include "excella-eureka-server"
