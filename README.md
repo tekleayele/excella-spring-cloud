@@ -1,17 +1,19 @@
 # excella-spring-cloud
 
 
-Instances currently registered with Eureka
+## Instances currently registered with Eureka
 
-Application	AMIs	Availability Zones	Status
-
-
-EXCELLA-SERVICE-CONSUMER	n/a (1)	(1)	UP (1) - {LOCAL-IP}:excella-service-consumer:8080
-
-EXCELLA-SERVICE-PROVIDER	n/a (1)	(1)	UP (1) - {LOCAL-IP}:excella-service-provider:8181
+Application	                AMIs	    Availability    Zones	    Status
 
 
-Config Server : 
+EXCELLA-SERVICE-CONSUMER	n/a             (1)	        (1)	         UP (1) - {LOCAL-IP}:excella-service-consumer:8080
+
+EXCELLA-SERVICE-PROVIDER	n/a             (1)	        (1)	         UP (1) - {LOCAL-IP}:excella-service-provider:8181
+
+![Eureka](https://github.com/tekleayele/excella-spring-cloud/blob/master/Eureka.png)
+
+
+## Config Server : 
 http://{LOCAL-IP}:8888/excella-service-provider/git
 
 ```,{
@@ -33,4 +35,3 @@ name: "excella-service-provider",
 }
 ```
 
-![Eureka](https://github.com/tekleayele/excella-spring-cloud/blob/master/Eureka.png)
