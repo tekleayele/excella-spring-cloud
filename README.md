@@ -6,13 +6,13 @@ Instances currently registered with Eureka
 Application	AMIs	Availability Zones	Status
 
 
-EXCELLA-SERVICE-CONSUMER	n/a (1)	(1)	UP (1) - 10.68.245.220:excella-service-consumer:8080
+EXCELLA-SERVICE-CONSUMER	n/a (1)	(1)	UP (1) - {LOCAL-IP}:excella-service-consumer:8080
 
-EXCELLA-SERVICE-PROVIDER	n/a (1)	(1)	UP (1) - 10.68.245.220:excella-service-provider:8181
+EXCELLA-SERVICE-PROVIDER	n/a (1)	(1)	UP (1) - {LOCAL-IP}:excella-service-provider:8181
 
 
 Config Server : 
-http://10.68.245.220:8888/excella-service-provider/git
+http://{LOCAL-IP}:8888/excella-service-provider/git
 
 ```,{
 name: "excella-service-provider",
