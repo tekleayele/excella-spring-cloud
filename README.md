@@ -32,3 +32,5 @@ name: "excella-service-provider",
     ]
 }
 ```
+
+![Eureka](https://github.com/tekleayele/excella-spring-cloud/blob/master/Eureka.png)
