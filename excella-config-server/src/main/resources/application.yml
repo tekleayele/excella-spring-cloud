@@ -4,8 +4,11 @@ spring:
   cloud:
     config:
       server:
-        native:
-          searchLocations: classpath:/
+        git:
+          uri: https://github.com/tekleayele/spring-cloud-config
+          force-pull: true
+#        native:
+#          searchLocations: classpath:/
       profiles: native
 server:
   port: 8888
@@ -13,3 +16,5 @@ server:
 endpoints:
   restart:
     enabled: true
+  refresh:
+      enabled: true

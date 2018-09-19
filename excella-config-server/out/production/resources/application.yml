@@ -1,15 +1,20 @@
 spring:
   profiles:
-    active: native
+    active: git
   cloud:
     config:
       server:
-        native:
-          searchLocations: classpath:/
+        git:
+          uri: https://github.com/tekleayele/spring-cloud-config
+          force-pull: true
+      #        native:
+      #          searchLocations: classpath:/  // Local file setting
       profiles: native
 server:
   port: 8888
 
 endpoints:
   restart:
+    enabled: true
+  refresh:
     enabled: true

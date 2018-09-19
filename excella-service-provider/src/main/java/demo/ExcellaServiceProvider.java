@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@RefreshScope
 @SpringBootApplication
 @EnableEurekaClient
 @RestController
@@ -22,7 +23,6 @@ public class ExcellaServiceProvider {
     }
 
     @Bean
-    @RefreshScope
     @ConfigurationProperties(prefix = "excella")
     ExcellaServiceProviderProperties excellaProperties() {
         return new ExcellaServiceProviderProperties();
