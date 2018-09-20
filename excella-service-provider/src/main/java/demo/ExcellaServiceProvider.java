@@ -1,7 +1,12 @@
 package demo;
 
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -11,10 +16,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RefreshScope
 @SpringBootApplication
 @EnableEurekaClient
 @RestController
+@RefreshScope
 public class ExcellaServiceProvider {
     private static final Logger log = LoggerFactory.getLogger(ExcellaServiceProvider.class);
 
@@ -28,6 +33,10 @@ public class ExcellaServiceProvider {
         return new ExcellaServiceProviderProperties();
     }
 
+    @Builder
+    @Data
+    @Getter
+    @Setter
     public static class ExcellaServiceProviderProperties {
         private String message;
 
@@ -38,11 +47,22 @@ public class ExcellaServiceProvider {
         public void setMessage(String message) {
             this.message = message;
         }
+
+        public String getEncryptedValue() {
+            return encryptedValue;
+        }
+
+        public void setEncryptedValue(String encryptedValue) {
+            this.encryptedValue = encryptedValue;
+        }
+
+        private String encryptedValue;
+
+
     }
 
     @RequestMapping("/")
     public String getMessage() {
-
-        return excellaProperties().getMessage();
+        return excellaProperties().getMessage() + ",  encryptedValue - " + excellaProperties().getEncryptedValue();
     }
 }
