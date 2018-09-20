@@ -1,4 +1,4 @@
-package demo;
+package demo.config;
 
 import org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
