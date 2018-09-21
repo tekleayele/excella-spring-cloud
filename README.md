@@ -94,24 +94,24 @@ Actuator health status :
 ```
 
 ## Config Server : 
-http://{LOCAL-IP}:8888/excella-service-provider/git
-
-```,{
-name: "excella-service-provider",
-    profiles: [
-    "git"
-    ],
-    label: "master",
-    version: "9ba67f7e424f130a6b6d548f68831c79b9a279f0",
-    state: null,
-    propertySources: [
-      {
-      name: "https://github.com/tekleayele/spring-cloud-config/excella-service-provider.yml",
-        source: {
-        excella.message: "Message from Excella Config Server - served from excella-service-provider.yml version 1.0"
-        }
+```
+{  
+   name:"excella-service-provider",
+   profiles:[  
+      "git"
+   ],
+   label:"master",
+   version:"699f1e98b63e3c03a0b23d333f425a249e844cf8",
+   state:null,
+   propertySources:[  
+      {  
+         name:"https://github.com/tekleayele/spring-cloud-config/excella-service-provider.yml",
+         source:{  
+            excella.message:"Message from Excella Config Server - served from excella-service-provider.yml version 1.0",
+            excella.encryptedValue:"secret"
+         }
       }
-    ]
+   ]
 }
 ```
 
