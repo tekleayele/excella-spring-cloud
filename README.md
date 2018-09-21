@@ -93,7 +93,37 @@ Actuator health status :
 }
 ```
 
-## Config Server : 
+## Config Server  
+
+Actuator health status : 
+```
+{  
+   status:"UP",
+   diskSpace:{  
+      status:"UP",
+      total:499963174912,
+      free:457607544832,
+      threshold:10485760
+   },
+   refreshScope:{  
+      status:"UP"
+   },
+   configServer:{  
+      status:"UP",
+      repositories:[  
+         {  
+            name:"app",
+            profiles:[  
+               "default"
+            ],
+            label:"master"
+         }
+      ]
+   }
+}
+```
+
+App name config file end point : 
 ```
 {  
    name:"excella-service-provider",
