@@ -3,13 +3,6 @@
 
 ## Instances currently registered with Eureka
 
-Application	                AMIs	    Availability    Zones	    Status
-
-
-EXCELLA-SERVICE-CONSUMER	n/a             (1)	        (1)	         UP (1) - {LOCAL-IP}:excella-service-consumer:8080
-
-EXCELLA-SERVICE-PROVIDER	n/a             (1)	        (1)	         UP (1) - {LOCAL-IP}:excella-service-provider:8181
-
 ![Eureka](https://github.com/tekleayele/excella-spring-cloud/blob/master/Eureka.png)
 
 ## Excella Service Consumer 
