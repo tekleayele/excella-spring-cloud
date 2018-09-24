@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 
 import org.springframework.cloud.config.server.EnableConfigServer;
 
-@EnableConfigServer
+
 @SpringBootApplication
-@Configuration
+@EnableConfigServer
 public class ExcellaConfigServer {
 
 	public static void main(String[] args) {

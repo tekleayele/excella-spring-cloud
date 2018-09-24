@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
 
 @RefreshScope
 @RestController
-@RequestMapping("/monthly-report")
+@RequestMapping("/api/monthly-report")
 public class ExcellaMonthlyReportController {
 
     private ExcellaReportPojo excellaReportPojo;

@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        encrypt:
+          enabled: true
+        git:
+          uri: https://github.com/tekleayele/spring-cloud-config
+  #Disable security of the Management endpoint
+  management:
+    security:
+      enabled:false
+  # Enable security for Basic Auth
+  security:
+    user:
+      name: test
+      password: test
+
+encrypt:
+  keyStore:
+    location: classpath:/server.jks
+    password: letmein
+    alias: mytestkey
+    secret: letmein

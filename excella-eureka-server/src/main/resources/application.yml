@@ -7,3 +7,10 @@ eureka:
     fetchRegistry: false
   server:
     waitTimeInMsWhenSyncEmpty: 0    #wait time for subsequent sync
+
+security:
+  ignored: /** # disable security check
+
+management:
+  security:
+    enabled: false  #disable the spring security on the management endpoints like /env, /refresh etc.

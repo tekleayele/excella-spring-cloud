@@ -1,15 +1,3 @@
-spring:
-  profiles:
-    active: git
-  cloud:
-    config:
-      server:
-        encrypt:
-          enabled: true
-        git:
-          uri: https://github.com/tekleayele/spring-cloud-config
-#        native:
-#          searchLocations: classpath:/
 server:
   port: 8888
 
@@ -18,11 +6,4 @@ endpoints:
     enabled: true
   refresh:
       enabled: true
-
-encrypt:
-  keyStore:
-    location: classpath:/server.jks
-    password: letmein
-    alias: mytestkey
-    secret: letmein
 
