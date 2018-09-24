@@ -2,45 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d7ec11e-50fc-4b34-bcfe-7fffb9359c14" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/excella-config-server/src/main/java/demo/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-config-server/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/config/ApiProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/config/OAuth2AuthorizationServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/config/OAuth2ResourceServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/config/PasswordEncoders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/config/WebSecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/controller/RestResponseEntityExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/domain/Authority.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/service/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/resources/db/migration/V1__create_oauth2.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/resources/db/migration/V2__create_user.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/resources/db/migration/V3__insert_authentication.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excella-service-provider/src/main/resources/db/migration/V4__insert_user.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-config-server/out/production/classes/demo/ExcellaConfigServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/excella-config-server/out/production/classes/demo/ExcellaConfigServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-config-server/out/production/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/excella-config-server/out/production/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-config-server/src/main/java/demo/ExcellaConfigServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/excella-config-server/src/main/java/demo/ExcellaConfigServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/excella-config-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-eureka-server/out/production/classes/demo/EurekaServerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/excella-eureka-server/out/production/classes/demo/EurekaServerApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-eureka-server/out/production/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/excella-eureka-server/out/production/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-eureka-server/src/main/java/demo/EurekaServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/excella-eureka-server/src/main/java/demo/EurekaServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/excella-eureka-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-service-consumer/out/production/classes/demo/ExcellaServiceConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/excella-service-consumer/out/production/classes/demo/ExcellaServiceConsumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-service-provider/out/production/classes/demo/ExcellaServiceProvider$ExcellaServiceProviderProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/excella-service-provider/out/production/classes/demo/ExcellaServiceProvider$ExcellaServiceProviderProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-service-provider/out/production/classes/demo/ExcellaServiceProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/excella-service-provider/out/production/classes/demo/ExcellaServiceProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-service-provider/out/production/classes/demo/controller/ExcellaMonthlyReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/excella-service-provider/out/production/classes/demo/controller/ExcellaMonthlyReportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-service-provider/out/production/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/excella-service-provider/out/production/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/ExcellaServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/ExcellaServiceProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/controller/ExcellaMonthlyReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/excella-service-provider/src/main/java/demo/controller/ExcellaMonthlyReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excella-service-provider/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/excella-service-provider/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -152,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/excella-service-provider/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+            <state relative-caret-position="261">
+              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -1710,7 +1672,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537818298527" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537818868887" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -1793,12 +1755,12 @@
       <workItem from="1537366792972" duration="1247000" />
       <workItem from="1537370555334" duration="7451000" />
       <workItem from="1537463678906" duration="6311000" />
-      <workItem from="1537799567458" duration="14672000" />
+      <workItem from="1537799567458" duration="15229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29901000" />
+    <option name="totallyTimeSpent" value="30458000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1813,7 +1775,7 @@
     <frame x="0" y="23" width="1680" height="955" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23137973" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23137973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1838,7 +1800,7 @@
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" />
       <window_info anchor="bottom" id="Spring" order="15" />
-      <window_info anchor="bottom" id="Run Dashboard" order="16" visible="true" weight="0.50984937" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" visible="true" weight="0.50984937" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -2265,8 +2227,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/excella-service-provider/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+        <state relative-caret-position="261">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
         </state>
       </provider>
     </entry>

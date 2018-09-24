@@ -18,9 +18,9 @@ spring:
     name: excella-service-provider   #current service name to be used by the eureka server
 
   datasource:
-    url: jdbc:postgresql://localhost/postgres
-    username: postgres
-    password:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USER}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
     flyway:
       baseline-on-migrate: true
