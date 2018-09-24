@@ -3,35 +3,145 @@
 
 ## Instances currently registered with Eureka
 
-Application	                AMIs	    Availability    Zones	    Status
-
-
-EXCELLA-SERVICE-CONSUMER	n/a             (1)	        (1)	         UP (1) - {LOCAL-IP}:excella-service-consumer:8080
-
-EXCELLA-SERVICE-PROVIDER	n/a             (1)	        (1)	         UP (1) - {LOCAL-IP}:excella-service-provider:8181
-
 ![Eureka](https://github.com/tekleayele/excella-spring-cloud/blob/master/Eureka.png)
 
-
-## Config Server : 
-http://{LOCAL-IP}:8888/excella-service-provider/git
-
-```,{
-name: "excella-service-provider",
-    profiles: [
-    "git"
-    ],
-    label: "master",
-    version: "9ba67f7e424f130a6b6d548f68831c79b9a279f0",
-    state: null,
-    propertySources: [
-      {
-      name: "https://github.com/tekleayele/spring-cloud-config/excella-service-provider.yml",
-        source: {
-        excella.message: "Message from Excella Config Server - served from excella-service-provider.yml version 1.0"
-        }
+## Excella Service Consumer 
+Actuator health status :
+```
+{  
+   description:"Spring Cloud Eureka Discovery Client",
+   status:"UP",
+   discoveryComposite:{  
+      description:"Spring Cloud Eureka Discovery Client",
+      status:"UP",
+      discoveryClient:{  
+         description:"Spring Cloud Eureka Discovery Client",
+         status:"UP",
+         services:[  
+            "excella-service-provider",
+            "excella-service-consumer"
+         ]
+      },
+      eureka:{  
+         description:"Remote status from Eureka server",
+         status:"UP",
+         applications:{  
+            EXCELLA-SERVICE-CONSUMER:1,
+            EXCELLA-SERVICE-PROVIDER:1
+         }
       }
-    ]
+   },
+   diskSpace:{  
+      status:"UP",
+      total:499963174912,
+      free:457605496832,
+      threshold:10485760
+   },
+   refreshScope:{  
+      status:"UP"
+   },
+   hystrix:{  
+      status:"UP"
+   }
+}
+```
+## Excella Service Provider 
+Actuator health status : 
+```
+{  
+   description:"Spring Cloud Eureka Discovery Client",
+   status:"UP",
+   discoveryComposite:{  
+      description:"Spring Cloud Eureka Discovery Client",
+      status:"UP",
+      discoveryClient:{  
+         description:"Spring Cloud Eureka Discovery Client",
+         status:"UP",
+         services:[  
+            "excella-service-provider",
+            "excella-service-consumer"
+         ]
+      },
+      eureka:{  
+         description:"Remote status from Eureka server",
+         status:"UP",
+         applications:{  
+            EXCELLA-SERVICE-CONSUMER:1,
+            EXCELLA-SERVICE-PROVIDER:1
+         }
+      }
+   },
+   diskSpace:{  
+      status:"UP",
+      total:499963174912,
+      free:457604100096,
+      threshold:10485760
+   },
+   refreshScope:{  
+      status:"UP"
+   },
+   configServer:{  
+      status:"UP",
+      propertySources:[  
+         "configClient",
+         "https://github.com/tekleayele/spring-cloud-config/excella-service-provider.yml"
+      ]
+   },
+   hystrix:{  
+      status:"UP"
+   }
+}
+```
+
+## Config Server  
+
+Actuator health status : 
+```
+{  
+   status:"UP",
+   diskSpace:{  
+      status:"UP",
+      total:499963174912,
+      free:457607544832,
+      threshold:10485760
+   },
+   refreshScope:{  
+      status:"UP"
+   },
+   configServer:{  
+      status:"UP",
+      repositories:[  
+         {  
+            name:"app",
+            profiles:[  
+               "default"
+            ],
+            label:"master"
+         }
+      ]
+   }
+}
+```
+
+App name config file end point : 
+```
+{  
+   name:"excella-service-provider",
+   profiles:[  
+      "git"
+   ],
+   label:"master",
+   version:"699f1e98b63e3c03a0b23d333f425a249e844cf8",
+   state:null,
+   propertySources:[  
+      {  
+         name:"https://github.com/tekleayele/spring-cloud-config/excella-service-provider.yml",
+         source:{  
+            excella.message:"Message from Excella Config Server - served from excella-service-provider.yml version 1.0",
+            excella.encryptedValue:"secret"
+         }
+      }
+   ]
 }
 ```
 
