@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  config-server:
+    build: './excella-config-server'
+  eureka-server:
+    build: './excella-eureka-server'

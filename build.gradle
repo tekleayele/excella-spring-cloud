@@ -21,10 +21,13 @@ buildscript {
         mavenCentral()
         maven { url "https://repo.spring.io/plugins-release" }
         maven { url "https://repo.spring.io/libs-release" }
+        maven { url "https://plugins.gradle.org/m2/" }
     }
 
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.20.1")
+
     }
 }
 subprojects {
@@ -33,6 +36,7 @@ subprojects {
     apply plugin: "idea"
     apply plugin: "org.springframework.boot"
     apply plugin: "io.spring.dependency-management"
+    apply plugin: 'com.palantir.docker'
 
     repositories {
         mavenCentral()
@@ -62,12 +66,18 @@ subprojects {
         annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
 
     }
+
 }
 
 
 project(":excella-config-server") {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-config-server')
+    }
+    
+    bootJar {
+        baseName = 'excella-config-server'
+        version =  '0.1.0'
     }
 }
 
@@ -84,12 +94,23 @@ project(":excella-service-provider") {
         runtime "org.postgresql:postgresql:${postgresqlVersion}"
 
     }
+    
+    bootJar {
+        baseName = 'excella-service-provider'
+        version =  '0.1.0'
+    }
 }
 
 project(":excella-eureka-server") {
     dependencies {
         compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-server', version: '2.0.1.RELEASE'
         testCompile('org.springframework.boot:spring-boot-starter-test')
+    }
+
+
+    bootJar {
+        baseName = 'excella-eureka-server'
+        version =  '0.1.0'
     }
 }
 
@@ -98,8 +119,14 @@ project(":excella-service-consumer") {
         compile("io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry")
         compile("io.pivotal.spring.cloud:spring-cloud-services-starter-circuit-breaker")
     }
+
+    bootJar {
+        baseName = 'excella-service-consumer'
+        version =  '0.1.0'
+    }
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '4.10.1'
 }
+

@@ -1,9 +1,6 @@
 package demo;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -34,12 +31,11 @@ public class ExcellaServiceProvider {
         return new ExcellaServiceProviderProperties();
     }
 
-    @Builder
-    @Data
-    @Getter
-    @Setter
+
     public static class ExcellaServiceProviderProperties {
         private String message;
+
+        public ExcellaServiceProviderProperties(){}
 
         public String getMessage() {
             return message;
