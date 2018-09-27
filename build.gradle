@@ -104,6 +104,9 @@ project(":excella-service-provider") {
 project(":excella-eureka-server") {
     dependencies {
         compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-server', version: '2.0.1.RELEASE'
+        compile ("javax.xml.bind:jaxb-api:2.3.0")
+        compile("javax.activation:activation:1.1")
+        compile("org.glassfish.jaxb:jaxb-runtime:2.3.0")
         testCompile('org.springframework.boot:spring-boot-starter-test')
     }
 

@@ -3,5 +3,60 @@ version: '3.3'
 services:
   config-server:
     build: './excella-config-server'
+    ports:
+      - "8888:8888"
+    healthcheck:
+      test: curl --fail -s http://localhost:8888/ || exit 1
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+
   eureka-server:
     build: './excella-eureka-server'
+    ports:
+      - "8761:8761"
+    healthcheck:
+      test: curl --fail -s http://localhost:8761/ || exit 1
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - config-server
+
+  service-provider-db:
+    build: './excella-service-provider/src/main/resources/db/migration/'
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    depends_on:
+      - config-server
+
+  service-provider:
+    build: './excella-service-provider'
+    ports:
+      - "8181:8181"
+    healthcheck:
+      test: curl --fail -s http://localhost:8181/ || exit 1
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - config-server
+      - service-provider-db
+      - eureka-server
+
+  service-consumer:
+    build: './excella-service-consumer'
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: curl --fail -s http://localhost:8080/ || exit 1
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - service-provider
