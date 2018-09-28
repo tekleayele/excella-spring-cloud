@@ -1,10 +1,13 @@
 spring:
   application:
     name: excella-service-provider   #current service name to be used by the eureka server
-  config:
-    uri: https://localhost:8888/
-    username: test
-    password: test
+  profiles:
+    active: git
+  cloud:
+    config:
+      uri: http://config-server:8888/
+      username: test
+      password: test
 
   datasource:
     url: ${SPRING_DATASOURCE_URL}

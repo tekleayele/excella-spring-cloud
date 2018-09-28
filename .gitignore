@@ -9,7 +9,8 @@ bin/
 *.ipr
 *.iws
 
-.gradle/
+
+.gradle
 build/
 *.DS_Store
 .env

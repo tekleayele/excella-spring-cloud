@@ -90,6 +90,10 @@ project(":excella-service-provider") {
         compile ("org.springframework.security:spring-security-jwt:${springSecurityJwtVersion}")
         compile("com.h2database:h2:${h2Version}")
         compile ("com.google.code.gson:gson:2.8.2")
+        compile ("javax.xml.bind:jaxb-api:2.3.0")
+        compile("javax.activation:activation:1.1")
+        compile("org.glassfish.jaxb:jaxb-runtime:2.3.0")
+
         runtime "org.flywaydb:flyway-core:${flywayVersion}"
         runtime "org.postgresql:postgresql:${postgresqlVersion}"
 

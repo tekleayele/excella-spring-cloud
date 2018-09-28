@@ -8,6 +8,7 @@ spring:
           enabled: true
         git:
           uri: https://github.com/tekleayele/spring-cloud-config
+      enabled: true
   #Disable security of the Management endpoint
   management:
     security:
