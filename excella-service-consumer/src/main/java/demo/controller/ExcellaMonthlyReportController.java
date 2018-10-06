@@ -31,7 +31,7 @@ public class ExcellaMonthlyReportController {
     @HystrixCommand(fallbackMethod = "getDefault")
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ExcellaReportPojo getExcellaMonthlyReport() {
-        return restTemplate.getForObject(excellaServiceProvider+"/api/monthly-report/dashboardMetrics", ExcellaReportPojo.class);
+        return restTemplate.getForObject(excellaServiceProvider + "/api/monthly-report/dashboardMetrics", ExcellaReportPojo.class);
     }
 
     public ExcellaReportPojo getDefault() {

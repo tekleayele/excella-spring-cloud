@@ -26,6 +26,15 @@ import java.util.List;
 @AllArgsConstructor
 public class Authority implements GrantedAuthority {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private Long id;
+
+    @Column(name = "NAME")
+    private String name;
+
+
     public Long getId() {
         return id;
     }
@@ -41,14 +50,6 @@ public class Authority implements GrantedAuthority {
     public void setName(String name) {
         this.name = name;
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
-    private Long id;
-
-    @Column(name = "NAME")
-    private String name;
 
     @Override
     public String getAuthority() {

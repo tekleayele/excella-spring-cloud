@@ -1,5 +1,5 @@
 ---
 applications:
- - name: hello-service
-   path: build/libs/hello-service.jar
+ - name: excella-config-server
+   path: build/libs/excella-config-server-0.1.0.jar
    memory: 512M

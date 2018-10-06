@@ -1,8 +1,8 @@
 ---
 applications:
- - name: hello-service
-   path: build/libs/hello-service-eureka.jar
+ - name: excella-service-provider
+   path: build/libs/excella-service-provider-0.1.0.jar
    memory: 512M
    services:
-    - config-server
-    - eureka
+    - excella-config-server
+    - excella-eureka-server

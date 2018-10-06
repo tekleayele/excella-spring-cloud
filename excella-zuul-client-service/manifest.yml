@@ -1,0 +1,7 @@
+---
+applications:
+ - name: excella-zuul-client-service
+   path: build/libs/excella-zuul-client-service-0.1.0.jar
+   memory: 512M
+   services:
+    - excella-eureka-server

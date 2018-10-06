@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/excella-eureka-server" />
             <option value="$PROJECT_DIR$/excella-service-consumer" />
             <option value="$PROJECT_DIR$/excella-service-provider" />
+            <option value="$PROJECT_DIR$/excella-zuul-client-service" />
           </set>
         </option>
       </GradleProjectSettings>

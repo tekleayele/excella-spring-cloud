@@ -6,6 +6,14 @@ services:
     ports:
       - "5432:5432"
 
+  eureka-server:
+    build: './excella-eureka-server'
+    ports:
+    - "8761:8761"
+    depends_on:
+      config-server:
+        condition: service_started
+
   config-server:
     build: './excella-config-server'
     ports:
@@ -16,25 +24,37 @@ services:
     links:
       - service-provider-db
 
-  eureka-server:
-    build: './excella-eureka-server'
+  zuul-client-service:
+    build: './excella-zuul-client-service'
     ports:
-      - "8761:8761"
+    - "8762:8762"
     depends_on:
       config-server:
         condition: service_started
+      eureka-server:
+        condition: service_started
+    links:
+      - eureka-server
 
   service-provider:
     build: './excella-service-provider'
     ports:
       - "8181:8181"
     depends_on:
+      service-provider-db:
+        condition: service_started
+      config-server:
+        condition: service_started
       eureka-server:
         condition: service_started
+      zuul-client-service:
+        condition: service_started
+
     links:
       - service-provider-db
       - config-server
       - eureka-server
+      - zuul-client-service
 
   service-consumer:
     build: './excella-service-consumer'
@@ -43,8 +63,11 @@ services:
     depends_on:
       service-provider:
         condition: service_started
+      zuul-client-service:
+        condition: service_started
     links:
       - eureka-server
       - service-provider
+      - zuul-client-service
 
 

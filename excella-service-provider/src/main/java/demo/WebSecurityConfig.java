@@ -8,7 +8,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/").permitAll();
-        // add this line to use H2 web console
+        // added this line to use H2 web console
         http.headers().frameOptions().disable();
     }
 }

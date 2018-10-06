@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ExcellaReportPojo {
 
-   private int headCount;
-   private double bdPipeline;
-   private int recrutingPipeline;
-   private double benchPluse;
+    private int headCount;
+    private double bdPipeline;
+    private int recrutingPipeline;
+    private double benchPluse;
 
     public int getHeadCount() {
         return headCount;

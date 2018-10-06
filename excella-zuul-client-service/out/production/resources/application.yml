@@ -1,5 +1,8 @@
 server:
-  port: 8080    #default port where the service will be started
+  port: 8762    #default port where the service will be started
+
+zuul:
+  retryable: true
 
 eureka: #tells about the Eureka server details and its refresh time
   instance:
@@ -7,7 +10,7 @@ eureka: #tells about the Eureka server details and its refresh time
     leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
-      defaultZone: http://eureka-server:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
     healthcheck:
       enabled: true
     lease:
@@ -15,7 +18,7 @@ eureka: #tells about the Eureka server details and its refresh time
 
 spring:
   application:
-    name: excella-service-consumer   #current service name to be used by the eureka server
+    name: excella-zuul-client-service   #current service name to be used by the eureka server
 
 security:
   ignored: /** # disable security check

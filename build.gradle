@@ -1,4 +1,3 @@
-
 buildscript {
     ext.setExtProperty = { propertyName, defaultValue ->
         if (!project.hasProperty(propertyName)) {
@@ -6,8 +5,8 @@ buildscript {
         }
     }
     ext {
-        setExtProperty("scsStartersVersion","2.0.1.RELEASE")
-        setExtProperty("springCloudVersion","Finchley.M8")
+        setExtProperty("scsStartersVersion", "2.0.1.RELEASE")
+        setExtProperty("springCloudVersion", "Finchley.M8")
         springBootVersion = "2.0.4.RELEASE"
         lombokVersion = '1.18.2'
         springSecurityOAuthVersion = '2.3.3.RELEASE'
@@ -42,7 +41,7 @@ subprojects {
         mavenCentral()
         maven { url "https://repo.spring.io/libs-release" }
         maven { url "https://repo.spring.io/libs-snapshot" }
-        maven { url 'https://repo.spring.io/libs-milestone'}
+        maven { url 'https://repo.spring.io/libs-milestone' }
 
     }
 
@@ -58,7 +57,7 @@ subprojects {
     dependencies {
         compile("org.springframework.boot:spring-boot-starter-web")
         compile("org.springframework.boot:spring-boot-starter-actuator")
-        compile ("org.springframework.boot:spring-boot-starter-security")
+        compile("org.springframework.boot:spring-boot-starter-security")
         compileOnly("org.projectlombok:lombok:${lombokVersion}")
         compile "io.springfox:springfox-spring-web:${swaggerVersion}"
         compile "io.springfox:springfox-swagger2:${swaggerVersion}"
@@ -72,12 +71,44 @@ subprojects {
 
 project(":excella-config-server") {
     dependencies {
-        compile('org.springframework.cloud:spring-cloud-config-server')
+        compile("org.springframework.cloud:spring-cloud-config-server")
+        compile("io.pivotal.spring.cloud:spring-cloud-services-starter-config-client")
+        compile("io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry")
     }
-    
+
     bootJar {
         baseName = 'excella-config-server'
-        version =  '0.1.0'
+        version = '0.1.0'
+    }
+}
+
+
+project(":excella-zuul-client-service") {
+    dependencies {
+        compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-zuul', version: '1.4.5.RELEASE'
+        compile("io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry")
+    }
+
+    bootJar {
+        baseName = 'excella-zuul-client-service'
+        version = '0.1.0'
+    }
+}
+
+
+project(":excella-eureka-server") {
+    dependencies {
+        compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-server', version: '2.0.1.RELEASE'
+        compile("javax.xml.bind:jaxb-api:2.3.0")
+        compile("javax.activation:activation:1.1")
+        compile("org.glassfish.jaxb:jaxb-runtime:2.3.0")
+        testCompile("org.springframework.boot:spring-boot-starter-test")
+    }
+
+
+    bootJar {
+        baseName = 'excella-eureka-server'
+        version = '0.1.0'
     }
 }
 
@@ -85,12 +116,12 @@ project(":excella-service-provider") {
     dependencies {
         compile("io.pivotal.spring.cloud:spring-cloud-services-starter-config-client")
         compile("io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry")
-        compile ("org.springframework.boot:spring-boot-starter-data-jpa")
-        compile ("org.springframework.security.oauth:spring-security-oauth2:${springSecurityOAuthVersion}")
-        compile ("org.springframework.security:spring-security-jwt:${springSecurityJwtVersion}")
+        compile("org.springframework.boot:spring-boot-starter-data-jpa")
+        compile("org.springframework.security.oauth:spring-security-oauth2:${springSecurityOAuthVersion}")
+        compile("org.springframework.security:spring-security-jwt:${springSecurityJwtVersion}")
         compile("com.h2database:h2:${h2Version}")
-        compile ("com.google.code.gson:gson:2.8.2")
-        compile ("javax.xml.bind:jaxb-api:2.3.0")
+        compile("com.google.code.gson:gson:2.8.2")
+        compile("javax.xml.bind:jaxb-api:2.3.0")
         compile("javax.activation:activation:1.1")
         compile("org.glassfish.jaxb:jaxb-runtime:2.3.0")
 
@@ -98,28 +129,13 @@ project(":excella-service-provider") {
         runtime "org.postgresql:postgresql:${postgresqlVersion}"
 
     }
-    
+
     bootJar {
         baseName = 'excella-service-provider'
-        version =  '0.1.0'
+        version = '0.1.0'
     }
 }
 
-project(":excella-eureka-server") {
-    dependencies {
-        compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-server', version: '2.0.1.RELEASE'
-        compile ("javax.xml.bind:jaxb-api:2.3.0")
-        compile("javax.activation:activation:1.1")
-        compile("org.glassfish.jaxb:jaxb-runtime:2.3.0")
-        testCompile('org.springframework.boot:spring-boot-starter-test')
-    }
-
-
-    bootJar {
-        baseName = 'excella-eureka-server'
-        version =  '0.1.0'
-    }
-}
 
 project(":excella-service-consumer") {
     dependencies {
@@ -129,9 +145,12 @@ project(":excella-service-consumer") {
 
     bootJar {
         baseName = 'excella-service-consumer'
-        version =  '0.1.0'
+        version = '0.1.0'
     }
 }
+
+
+
 
 task wrapper(type: Wrapper) {
     gradleVersion = '4.10.1'

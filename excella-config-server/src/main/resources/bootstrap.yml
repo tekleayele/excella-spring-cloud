@@ -1,4 +1,6 @@
 spring:
+  application:
+      name: excella-config-server
   profiles:
     active: git
   cloud:
@@ -25,3 +27,4 @@ encrypt:
     password: letmein
     alias: mytestkey
     secret: letmein
+

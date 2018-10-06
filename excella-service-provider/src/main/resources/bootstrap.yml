@@ -5,9 +5,7 @@ spring:
     active: git
   cloud:
     config:
-      uri: http://config-server:8888/
-      username: test
-      password: test
+      uri: http://zuul-client-service:8762/config-server
 
   datasource:
     url: ${SPRING_DATASOURCE_URL}
